@@ -1,0 +1,129 @@
+Creating Database Tables 
+
+-- Customers
+CREATE TABLE Customers (
+  customer_id INT PRIMARY KEY,
+  first_name VARCHAR(50),
+  last_name VARCHAR(50),
+  email VARCHAR(100),
+  address VARCHAR(200),
+  phone_number VARCHAR(20)
+);
+
+-- Categories
+CREATE TABLE Categories (
+  category_id INT PRIMARY KEY,
+  category_name VARCHAR(100)
+);
+
+-- Sellers
+CREATE TABLE Sellers (
+  seller_id INT PRIMARY KEY,
+  seller_name VARCHAR(100),
+  email VARCHAR(100),
+  phone_number VARCHAR(20),
+  address VARCHAR(200)
+);
+
+-- Products
+CREATE TABLE Products (
+  product_id INT PRIMARY KEY,
+  product_name VARCHAR(100),
+  price DECIMAL(10, 2),
+  category_id INT,
+  seller_id INT,
+  FOREIGN KEY (category_id) REFERENCES Categories(category_id),
+  FOREIGN KEY (seller_id) REFERENCES Sellers(seller_id)
+);
+-- Transactions
+CREATE TABLE Transactions (
+  transaction_id INT PRIMARY KEY,
+  customer_id INT,
+  product_id INT,
+  quantity INT,
+  total_amount DECIMAL(10, 2),
+  FOREIGN KEY (customer_id) REFERENCES Customers(customer_id),
+  FOREIGN KEY (product_id) REFERENCES Products(product_id)
+);
+-- Feedback
+CREATE TABLE Feedback (
+  feedback_id INT PRIMARY KEY,
+  customer_id INT,
+  product_id INT,
+  seller_id INT,
+  rating INT,
+  comment VARCHAR(200),
+  FOREIGN KEY (customer_id) REFERENCES Customers(customer_id),
+  FOREIGN KEY (product_id) REFERENCES Products(product_id),
+  FOREIGN KEY REFERENCES Sellers(seller_id) (seller_id) 
+);
+--Employees 
+CREATE TABLE Employees (
+  employee_id INT PRIMARY KEY,
+  first_name VARCHAR(50),
+  last_name VARCHAR(50),
+  roles VARCHAR(50),
+  email VARCHAR(100),
+  address VARCHAR(200),
+  phone_number VARCHAR(20)
+);
+-- Orders
+CREATE TABLE Orders (
+  order_id INT PRIMARY KEY,
+  customer_id INT,
+  product_id INT,
+  quantity INT,
+  total_amount DECIMAL(10, 2),
+  FOREIGN KEY (customer_id) REFERENCES Customers(customer_id),
+  FOREIGN KEY (product_id) REFERENCES Products(product_id)
+);
+-- Suppliers
+CREATE TABLE Suppliers (
+  supplier_id INT PRIMARY KEY,
+  employee_id INT,
+  order_id INT,
+  FOREIGN KEY (employee_id) REFERENCES Employees(employee_id),
+  FOREIGN KEY (order_id) REFERENCES Orders(order_id)
+);
+-- Payments
+CREATE TABLE Payments (
+  payment_id INT PRIMARY KEY,
+  order_id INT,
+  payment_amount DECIMAL(10, 2),
+  FOREIGN KEY (order_id) REFERENCES Orders(order_id),
+  FOREIGN KEY (method_id) REFERENCES PaymentMethods(method_id)
+);
+-- PaymentMethods
+CREATE TABLE PaymentMethods (
+  method_id INT PRIMARY KEY,
+  method VARCHAR(50)
+);
+-- Delivery
+CREATE TABLE Delivery (
+  delivery_id INT PRIMARY KEY,
+  supplier_id INT,
+  order_id INT,
+  status VARCHAR(50)
+  FOREIGN KEY (order_id) REFERENCES Orders(order_id)
+);
+-- Discount
+CREATE TABLE Discount (
+  discount_id INT PRIMARY KEY,
+  product_id INT,
+  quantity INT,
+  total_amount DECIMAL(10, 2),
+  FOREIGN KEY (product_id) REFERENCES Products(product_id)
+);
+-- Invoice
+CREATE TABLE Invoice (
+  invoice_id INT PRIMARY KEY,
+  order_id INT,
+  payment_id INT,
+  FOREIGN KEY (order_id) REFERENCES Orders(order_id),
+  FOREIGN KEY (payment_id) REFERENCES Payments(payment_id)
+);
+
+
+
+
+
