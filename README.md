@@ -11,3 +11,8 @@ The Database Diagram
 
 ![Image Alt](https://github.com/VishnuReddy45-prog/Online-Market-pace-/blob/16fdbf56047ac548113a68d1ba8a09a8a5e45d9d/Screenshot%202025-05-03%20135249.png)
 
+The SQL queries
+
+![Image Alt](https://github.com/user-attachments/assets/898ef417-0a55-4206-800a-2cd8cd674f1a)
+
+
