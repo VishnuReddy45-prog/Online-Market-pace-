@@ -15,6 +15,7 @@ The SQL queries
 
 ![Image Alt](https://github.com/user-attachments/assets/898ef417-0a55-4206-800a-2cd8cd674f1a)
 ![Image Alt](https://github.com/VishnuReddy45-prog/Online-Market-pace-/blob/44bef779aa124a32ef185c44639ee83002a28d05/Screenshot%202025-05-03%20141117.png)
+![Image Alt](https://github.com/VishnuReddy45-prog/Online-Market-pace-/blob/f280b562aa00db6cd8b578469a3cc55df7d38c65/Screenshot%202025-05-03%20141147.png)
 
 
 
