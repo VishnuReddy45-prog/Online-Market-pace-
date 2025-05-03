@@ -1,4 +1,4 @@
-# Online-Market-pace-
+# MAD Online-Market-pace-
 Our project is an online marketplace where buyers and sellers connect, facilitating secure transactions and product listings. It enhances user experience through account management, feedback storage, and personalized recommendations.
 The marketplace aims to connect sellers and buyers, offering various items and services. Users can browse through different categories, add items to their cart, and complete transactions securely.
 
